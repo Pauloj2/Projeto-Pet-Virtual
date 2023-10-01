@@ -1,0 +1,57 @@
+Algoritmo "Projeto"
+// Projeto Virtual Pet 2023
+// Professor : Gilberto
+
+Var
+   nome: caractere
+   comando : inteiro
+
+Inicio
+
+   escreval ("##########################")
+   escreval ("Projeto Virtual Pet 2023")
+   escreval ("##########################")
+   escreval ("   ")
+   escreva("Digigite o nome do seu Pet : ")
+   leia (nome)
+   escreval ("   ")
+   escreval ("====================")
+   escreval ("Nome do Pet: ",nome)
+   escreval ("====================")
+
+
+   escreval ("    _=,_           ")
+   escreval (" o_/6 /#\          ")
+   escreval (" \__ |##/          ")
+   escreval ("   ='|--\          ")
+   escreval ("    /   #'-.       ")
+   escreval ("    \#|_   _'-. /  ")
+   escreval ("     |/ \_( # |^   ")
+   escreval ("    C/ ,--___/     ")
+   escreval ("    ")
+   repita
+      repita
+         escreval ("  ")
+         escreval ("Qual o numero da açao que voçe deseja realizar ?")
+         escreval ("  ")
+         escreval (" MENU DE AÇOES")
+         escreval ("1.Avançar o tempo")
+         escreval ("2.Alimentar")
+         escreval ("3.Jogar")
+         escreval ("4.Dar banho")
+         escreval ("5.Ver status")
+         escreval ("6.Desligar")
+         escreval ("  ")
+         leia (comando)
+
+         escolha (comando)
+         caso 1
+         caso 2
+         caso 3
+         caso 4
+         caso 5
+         caso 6
+         fimescolha
+      ate (comando = 6)
+
+Fimalgoritmo
