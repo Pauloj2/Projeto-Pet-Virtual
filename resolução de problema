@@ -1,0 +1,312 @@
+Algoritmo "semnome"
+
+Var
+
+   nome: caractere
+   comando, vida, fome, cont : inteiro
+   felicidade, limpeza, num : inteiro
+   usuario : inteiro
+   pet : inteiro
+
+Inicio
+ vida <- 0
+   fome <- 0
+   felicidade <- 5
+   limpeza <- 10
+
+   escreval ("##########################")
+   escreval ("Projeto Virtual Pet 2023")
+   escreval ("##########################")
+   escreval ("   ")
+   enquanto (nome = "" ) faca
+      escreva("Digite o nome do seu Pet : ")
+      leia (nome)
+   fimenquanto
+   escreval ("   ")
+   escreval ("====================")
+   escreval ("Nome do Pet: ",nome)
+   escreval ("====================")
+
+
+   escreval ("    _=,_           ")
+   escreval (" o_/6 /#\          ")
+   escreval (" \__ |##/          ")
+   escreval ("   ='|--\          ")
+   escreval ("    /   #'-.       ")
+   escreval ("    \#|_   _'-. /  ")
+   escreval ("     |/ \_( # |^   ")
+   escreval ("    C/ ,--___/     ")
+   escreval (  )
+   repita
+      repita
+         escreval ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+         escreval ("Qual o numero da açao você deseja realizar ?")
+         escreval ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+         escreval (" MENU DE AÇOES")
+         escreval ("1.Avançar o tempo")
+         escreval ("2.Alimentar")
+         escreval ("3.Jogar")
+         escreval ("4.Dar banho")
+         escreval ("5.Ver status")
+         escreval ("6.Desligar")
+         escreval ("--------------------------------------------")
+         leia (comando)
+
+         escolha (comando)
+         caso 1
+            // Avançar o tempo
+            escreval ("                __   ")
+            escreval ("~~~~~~~~~~ (___()'`; ")
+            escreval ("~~~~~~~~~~ /,    /`  ")
+            escreval ("~~~~~~~~~~ \\'--\\   ")
+            escreval ()
+            vida <- vida + 8
+            fome <- fome + 3
+            felicidade <- felicidade - 2
+            limpeza <- limpeza - 2
+            escreval ("---------------------------------")
+            escreval (nome," tem ",vida," horas de idade")
+            escreval ("---------------------------------")
+            se (felicidade <= 0) entao
+               felicidade <- 0
+            senao
+               se (felicidade > 10) entao
+                  felicidade <- 10
+               fimse
+            fimse
+
+         caso 2
+            // Alimentar
+            escreval ("            /\__        ")
+            escreval ("   .--.----'  - \       ")
+            escreval ("  /    )    \___/       ")
+            escreval (" |  '------.___)        ")
+            escreval ("  `---------`           ")
+            escreva ( )
+            se (fome = 0 ) entao
+               felicidade <- felicidade - 2
+            fimse
+            fome <- fome - 4
+            se (fome < 0) entao
+               fome <- 0
+            senao
+               se (fome > 10) entao
+                  fome <- 10
+               fimse
+            fimse
+            se (felicidade <= 0) entao
+               felicidade <- 0
+            senao
+               se (felicidade > 10) entao
+                  felicidade <- 10
+               fimse
+            fimse
+
+
+
+         caso 3
+            //Jogar: Ao escolher a função jogar, o pet e o usuário farão uma
+            // partida de pedra, papel e tesoura. Caso o pet vença, sua felicidade
+            // aumenta em 5 pontos. Caso ele perca, sua felicidade aumentou em 3 pontos.
+            escreval ("=======================")
+            escreval ("PEDRA,PAPEL OU TESOURA")
+            escreval ("=======================")
+            escreval ("    __                                  ")
+            escreval ("   ()'`;        ____  ____  ____  ____  ")
+            escreval ("   /\|`        ||G ||||A ||||M ||||E || ")
+            escreval ("  /  |         ||__||||__||||__||||__|| ")
+            escreval ("(/_)_|_        |/__\||/__\||/__\||/__\| ")
+            escreval ( )
+            escrevaL ("Digite sua jogada: ")
+            escreval ("-----------------------")
+            escreval ("Digite 1 para PEDRA")
+            escreval ("Digite 2 para PAPEL")
+            escreval ("digite 3 para TESOURA")
+            escreval ("-----------------------")
+            escreva ("Jogada escolhida foi : ")
+            leia (usuario)
+            repita
+               se (usuario <> 1) e (usuario <> 2) e (usuario <>3) entao
+                  escreval ("Digite novamente o nomero da jogada")
+                  escreva ("Jogada escolhida é : ")
+                  leia (usuario)
+               fimse
+            ate (usuario = 1) ou (usuario = 2) ou (usuario = 3)
+            escreva ( )
+            escreva (nome, " escolheu a jogada:")
+            aleatorio 1 , 3
+            leia (pet)
+            aleatorio off
+            escreval ( )
+
+            se (usuario = 1) e (pet = 1) entao
+               escreval ("EMPATE")
+            senao
+               se (usuario = 1) e (pet = 2) entao
+                  escreval (nome," ,GANHOU A PARTIDA ")
+                  felicidade <- felicidade + 5
+               senao
+                  se (usuario = 1) e (pet = 3) entao
+                     escreval ("VOCÊ 'jogador' GANHOU A PARTIDA")
+                     felicidade <- felicidade + 3
+                  senao
+                     se (usuario = 2) e (pet = 1) entao
+                        escreval ("VOCÊ 'jogador' GANHOU A PARTIDA")
+                        felicidade <- felicidade + 3
+                     senao
+                        se (usuario = 2) e (pet = 2) entao
+                           escreval ("EMPATE")
+                        senao
+                           se (usuario = 2) e (pet = 3) entao
+                              escreval (nome," ,GANHOU A PARTIDA ")
+                              felicidade <- felicidade + 5
+                           senao
+                              se (usuario = 3) e (pet = 1) entao
+                                 escreval (nome," ,GANHOU A PARTIDA ")
+                                 felicidade <- felicidade + 5
+                              senao
+                                 se (usuario = 3) e (pet = 2) entao
+                                    escreval ("VOCÊ 'jogador' GANHOU A PARTIDA")
+                                    felicidade <- felicidade + 3
+                                 senao
+                                    se (usuario = 3) e (pet = 3) entao
+                                       escreval ("EMPATE")
+                                    fimse
+                                 fimse
+                              fimse
+                           fimse
+                        fimse
+                     fimse
+                  fimse
+               fimse
+            fimse
+
+
+         caso 4
+            // Dar Banho
+            escreval ("       .-'-.     ")
+            escreval ("      /|6 6|\    ")
+            escreval ("     {/(_0_)\}   ")
+            escreval ("      _/ ^ \_    ")
+            escreval ("     (/_/^\_\)-' ")
+
+            para num de limpeza ate 9 passo 1 faca
+               cont <- cont + 1
+            fimpara
+            limpeza <- limpeza + cont
+
+            se (limpeza = 10) entao
+               felicidade <- felicidade - 6
+            fimse
+            se (limpeza < 0) entao
+               limpeza <- 0
+            senao
+               se (limpeza > 10) entao
+                  limpeza <- 10
+               fimse
+            fimse
+            
+            se (felicidade <= 0) entao
+               felicidade <- 0
+            senao
+               se (felicidade > 10) entao
+                  felicidade <- 10
+               fimse
+            fimse
+
+         caso 5
+            // Ver Status
+            escreval ("----------------------------")
+            escreval ("Status do PET ",nome )
+            escreval ("----------------------------")
+            escreval ("<(^_^)>    (•_•)    _(x.x)_ ")
+            escreval ( )
+            escreval ("    -----.    ")
+            escreval ("   /______\   ")
+            escreval ("   |Ll  Ll|   ")
+            escreval ("   |__[]__|   ")
+            escreval (" '''''\ \'''' ")
+            escreval ( )
+            escreval ("Idade em Horas: ",vida)
+            escreval ("Fome: ",fome)
+            escreval ("Felicidade: ",felicidade)
+            escreval ("Limpeza: ",limpeza)
+            escreval ( )
+         fimescolha
+
+      ate (comando = 6) ou (vida = 168) ou (fome > 5) ou (limpeza = 0) ou (felicidade = 0)
+
+      se ((fome > 5) e (felicidade = 0)) entao
+      
+      escreval ("  ___   __   _  _  ____  ")
+         escreval (" / __) / _\ ( \/ )(  __) ")
+         escreval ("( (_ \/    \/ \/ \ ) _)  ")
+         escreval (" \___/\_/\_/\_)(_/(____) ")
+         escreval ( )                        ")
+         escreval ("  __   _  _  ____  ____  ")
+         escreval (" /  \ / )( \(  __)(  _ \ ")
+         escreval ("(  O )\ \/ / ) _)  )   / ")
+         escreval (" \__/  \__/ (____)(__\_) ")
+         escreval ("===============================")
+         escreval ("SEU PET ",nome," MORREU DE FOME E DE TRISTEZA")
+         
+     senao
+         se (fome > 5) entao
+            escreval ("  ___   __   _  _  ____  ")
+            escreval (" / __) / _\ ( \/ )(  __) ")
+            escreval ("( (_ \/    \/ \/ \ ) _)  ")
+            escreval (" \___/\_/\_/\_)(_/(____) ")
+            escreval ( )                        ")
+            escreval ("  __   _  _  ____  ____  ")
+            escreval (" /  \ / )( \(  __)(  _ \ ")
+            escreval ("(  O )\ \/ / ) _)  )   / ")
+            escreval (" \__/  \__/ (____)(__\_) ")
+            escreval ("===============================")
+            escreval ("SEU PET ",nome," MORREU DE FOME")
+
+         senao
+            se (felicidade = 0) entao
+               escreval ("  ___   __   _  _  ____  ")
+               escreval (" / __) / _\ ( \/ )(  __) ")
+               escreval ("( (_ \/    \/ \/ \ ) _)  ")
+               escreval (" \___/\_/\_/\_)(_/(____) ")
+               escreval ( )                        ")
+               escreval ("  __   _  _  ____  ____  ")
+               escreval (" /  \ / )( \(  __)(  _ \ ")
+               escreval ("(  O )\ \/ / ) _)  )   / ")
+               escreval (" \__/  \__/ (____)(__\_) ")
+               escreval ("===================================")
+               escreval ("Seu Pet ",nome," morreu de tristeza")
+            senao
+               se (limpeza = 0) entao
+                  escreval ("  ___   __   _  _  ____  ")
+                  escreval (" / __) / _\ ( \/ )(  __) ")
+                  escreval ("( (_ \/    \/ \/ \ ) _)  ")
+                  escreval (" \___/\_/\_/\_)(_/(____) ")
+                  escreval ( )                        ")
+                  escreval ("  __   _  _  ____  ____  ")
+                  escreval (" /  \ / )( \(  __)(  _ \ ")
+                  escreval ("(  O )\ \/ / ) _)  )   / ")
+                  escreval (" \__/  \__/ (____)(__\_) ")
+                  escreval ("==================================")
+                  escreval ("SEU PET ",nome," MORREU DE SUJEIRA")
+               senao
+                  se (vida = 168 ) entao
+                     escreval (" ______                      _          _             ")
+                     escreval (" | ___ \                    | |        //             ")
+                     escreval (" | |_/ /  __ _  _ __   __ _ | |__    ___  _ __   ___  ")
+                     escreval (" |  __/  / _` || '__| / _` || '_ \  / _ \| '_ \ / __| ")
+                     escreval (" | |    | (_| || |   | (_| || |_) ||  __/| | | |\__ \ ")
+                     escreval (" \_|     \__,_||_|    \__,_||_.__/  \___||_| |_||___/ ")
+                     escreval ( )
+                     escreval ("====================================================")
+                     escreval ("Parábens! Voce ganhou, ",nome," sobreviveu os 7 dias")
+                     escreval ("====================================================")
+
+                  fimse
+               fimse
+            fimse
+         fimse
+      fimse
+
+Fimalgoritmo
