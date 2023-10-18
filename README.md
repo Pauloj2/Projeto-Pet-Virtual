@@ -1,7 +1,8 @@
 # PROJETO 1 – 10 pontos
 1. DESCRIÇÃO
 Os alunos deverão ser organizados em equipes de no mínimo 3 pessoas e no máximo 4 pessoas. Equipes com menos ou mais membros autorizados nota zero na atividade. Cada equipe deverá escolher um nome de “tempo de desenvolvimento”. Essa equipe deverá ter um líder integrante, que fará a entrega do trabalho final.
-#       _=,_         
+# 
+       _=,_         
     o_/6 /#\        
     \__ |##/        
       ='|--\         
