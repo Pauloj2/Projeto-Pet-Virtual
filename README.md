@@ -1,7 +1,6 @@
 # PROJETO 1 – 10 pontos
 1. DESCRIÇÃO
 Os alunos deverão ser organizados em equipes de no mínimo 3 pessoas e no máximo 4 pessoas. Equipes com menos ou mais membros autorizados nota zero na atividade. Cada equipe deverá escolher um nome de “tempo de desenvolvimento”. Essa equipe deverá ter um líder integrante, que fará a entrega do trabalho final.
-
        _=,_         
     o_/6 /#\        
     \__ |##/        
@@ -10,6 +9,7 @@ Os alunos deverão ser organizados em equipes de no mínimo 3 pessoas e no máxi
        \#|_   _'-. /
         |/ \_( # |" 
        C/ ,--___/
+   
    Apresentado no dia 23 de novembro de 1996, o Tamagotchi era uma espécie de chaveiro que abrigava um bichinho virtual que pedia por doses regulares de comida virtual, atenção virtual e carinho virtual. Agora, você! Isso mesmo, você, junto com seu tempo de desenvolvimento, terá a honra de implementar uma versão dessa febre dos anos 90.
 
 O animal de estimação virtual terá as seguintes informações atreladas a ele:
