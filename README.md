@@ -31,6 +31,7 @@ O projeto deve conter todas as funcionalidades incluídas na seção do menu a s
 O trabalho consiste em desenvolver um projeto funcional de um bichinho virtual. O algoritmo deve ter um menu inicial, com as seguintes opções:
 #
 Projeto Virtual Pet 2023
+#
 <(^_^)>    (•_•)    _(x.x)_
 Escolha uma opção a seguir: 
 1.	Avançar o tempo
