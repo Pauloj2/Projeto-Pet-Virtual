@@ -16,15 +16,15 @@ Os alunos deverão ser organizados em equipes de no mínimo 3 pessoas e no máxi
 
 O animal de estimação virtual terá as seguintes informações atreladas a ele:
 
-Tempo de vida: inicia com 0 dias vivo, a cada 24 horas, envelhece um dia. O tempo de vida máximo é de 7 dias.
+ . Tempo de vida: inicia com 0 dias vivo, a cada 24 horas, envelhece um dia. O tempo de vida máximo é de 7 dias.
 
-Felicidade: começa em 5. Comer ao estar com fome, brincar e dormir, aumenta esse atributo. Ser solicitado a comer ou ficar muito tempo sujo e sem diversão (jogar), diminuir esse atributo. O valor máximo para esse atributo é 10. Caso o atributo felicidade chegue a zero, o bichinho virtual morre de tristeza 😕 .
+ . Felicidade: começa em 5. Comer ao estar com fome, brincar e dormir, aumenta esse atributo. Ser solicitado a comer ou ficar muito tempo sujo e sem diversão (jogar), diminuir esse atributo. O valor máximo para esse atributo é 10. Caso o atributo felicidade chegue a zero, o bichinho virtual morre de tristeza 😕 .
 
-Limpeza: Esse atributo inicia com 10 pontos. Ao passar o tempo sem tomar banho, esse atributo diminui. Um bichinho super sujo morre por sujeira. Tomar banho aumenta esse atributo. Tomar banho estando limpo diminui o atributo felicidade.
+ . Limpeza: Esse atributo inicia com 10 pontos. Ao passar o tempo sem tomar banho, esse atributo diminui. Um bichinho super sujo morre por sujeira. Tomar banho aumenta esse atributo. Tomar banho estando limpo diminui o atributo felicidade.
 
-Fome: Esse atributo inicia com 0. Ao passar o tempo, esse atributo aumenta. Um pet faminto morre de fome. Como diminuir esse atributo, até chegar ao máximo de zero. Tentar alimentar um animal de estimação contra sua vontade ou deixá-lo triste.
+ . Fome: Esse atributo inicia com 0. Ao passar o tempo, esse atributo aumenta. Um pet faminto morre de fome. Como diminuir esse atributo, até chegar ao máximo de zero. Tentar alimentar um animal de estimação contra sua vontade ou deixá-lo triste.
 
-Doente: Esse atributo indicará se o animal está ou não doente. Ele poderá ficar doente ao acaso (de maneira pesquisada). Caso ele esteja doente, a cada 8 horas ele deverá ter chance de se curar sozinho. Isso aconteceu com 33,3% de chance após 8 horas do início da doença. Após 16 horas ele terá 66,6% de chance de ser curado e após 24 horas ele estará curado.
+ . Doente: Esse atributo indicará se o animal está ou não doente. Ele poderá ficar doente ao acaso (de maneira pesquisada). Caso ele esteja doente, a cada 8 horas ele deverá ter chance de se curar sozinho. Isso aconteceu com 33,3% de chance após 8 horas do início da doença. Após 16 horas ele terá 66,6% de chance de ser curado e após 24 horas ele estará curado.
 
 O projeto deve conter todas as funcionalidades incluídas na seção do menu a seguir. Além disso, ao iniciar o programa pela primeira vez, o usuário deverá escolher o nome para seu ‘animal de estimação virtual’. A partir daí, todas as frases devem ser personalizadas para chamar o bichinho pelo nome escolhido.
 
@@ -44,6 +44,7 @@ Escolha uma opção a seguir:
 
 
 ## 1.1 Detalhamento de funções
+
 Avançar o tempo: Ao escolher essa função, o jogador faz o pet “avançar 8 horas de vida” em seu tempo. Isso impactará em diversas das funcionalidades do bichinho virtual. A cada 24 horas passadas, o animal envelhece um dia. O tempo de vida máximo para o pet é de 7 dias, após isso, ele morre de velhice. Nesse caso, o jogador 'ganha o jogo', pois fez com que seu bichinho vivesse feliz até o fim. A cada vez que o tempo avança, o animal modifica os seguintes status: A fome aumenta em 3. A felicidade diminui em 2. A Limpeza diminui em 2.
 
 Alimentar: Ao alimentar o pet, sua fome diminuirá em 4 pontos. Chegando ao máximo de fome 0. Tentar alimentar um animal de estimação que está com fome 0, fará com que sua felicidade diminua em 2 pontos.
