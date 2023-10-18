@@ -31,7 +31,6 @@ O projeto deve conter todas as funcionalidades incluídas na seção do menu a s
 O trabalho consiste em desenvolver um projeto funcional de um bichinho virtual. O algoritmo deve ter um menu inicial, com as seguintes opções:
 #
 Projeto Virtual Pet 2023
-#
 <(^_^)>    (•_•)    _(x.x)_
 Escolha uma opção a seguir: 
 1.	Avançar o tempo
@@ -41,7 +40,8 @@ Escolha uma opção a seguir:
 5.	Ver status
 6.	Desligar
 
-#1.1 Detalhamento de funções
+
+# 1.1 Detalhamento de funções
 Avançar o tempo: Ao escolher essa função, o jogador faz o pet “avançar 8 horas de vida” em seu tempo. Isso impactará em diversas das funcionalidades do bichinho virtual. A cada 24 horas passadas, o animal envelhece um dia. O tempo de vida máximo para o pet é de 7 dias, após isso, ele morre de velhice. Nesse caso, o jogador 'ganha o jogo', pois fez com que seu bichinho vivesse feliz até o fim. A cada vez que o tempo avança, o animal modifica os seguintes status: A fome aumenta em 3. A felicidade diminui em 2. A Limpeza diminui em 2.
 
 Alimentar: Ao alimentar o pet, sua fome diminuirá em 4 pontos. Chegando ao máximo de fome 0. Tentar alimentar um animal de estimação que está com fome 0, fará com que sua felicidade diminua em 2 pontos.
