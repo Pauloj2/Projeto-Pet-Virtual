@@ -8,7 +8,7 @@ Algoritmo "PROJETO"
 Var
 
    nome: caractere
-   comando, vida, fome, cont : inteiro
+   comando, vida, fome, cont, opcao : inteiro
    felicidade, limpeza, num : inteiro
    usuario, doente : inteiro
    pet, ND, tdoente : inteiro
@@ -45,6 +45,7 @@ Inicio
    escreval (  )
 
    repita
+   opcao <- 0
       escreval ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
       escreval ("Qual o número da ação você deseja realizar ?")
       escreval ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
@@ -60,118 +61,144 @@ Inicio
 
       escolha (comando)
       caso 1
-      limpatela
+         limpatela
          // Avançar o tempo
-         escreval ("                __   ")
-         escreval ("~~~~~~~~~~ (___()'`; ")
-         escreval ("~~~~~~~~~~ /,    /`  ")
-         escreval ("~~~~~~~~~~ \\'--\\   ")
-         escreval ()
-         vida <- vida + 8
-         fome <- fome + 3
-         felicidade <- felicidade - 2
-         limpeza <- limpeza - 2
-         escreval ("---------------------------------")
-         escreval (nome," tem ",vida," horas de idade")
-         escreval ("---------------------------------")
-         se (felicidade <= 0) entao
-            felicidade <- 0
-         senao
-            se (felicidade > 10) entao
-               felicidade <- 10
+         se (felicidade < 3) ou (fome > 6) ou (limpeza < 3) entao
+            repita
+               escreval ("Se avançar o tempo o seu Pet vai MORRER!")
+               escreval("Deseja proceguir ?")
+               escreval("1.Sim")
+               escreval("2.Não")
+               leia(opcao)
+            ate(opcao = 1) ou (opcao = 2)
+         fimse
+         se (opcao <> 2) entao
+            escreval ("                __   ")
+            escreval ("~~~~~~~~~~ (___()'`; ")
+            escreval ("~~~~~~~~~~ /,    /`  ")
+            escreval ("~~~~~~~~~~ \\'--\\   ")
+            escreval ()
+            vida <- vida + 8
+            fome <- fome + 3
+            felicidade <- felicidade - 2
+            limpeza <- limpeza - 2
+            escreval ("---------------------------------")
+            escreval (nome," tem ",vida," horas de idade")
+            escreval ("---------------------------------")
+            se (felicidade <= 0) entao
+               felicidade <- 0
+            senao
+               se (felicidade > 10) entao
+                  felicidade <- 10
+               fimse
+            fimse
+            // Caso ele esteja doente, a cada 8 horas ele deverá ter chance de se curar
+            // sozinho. Isso aconteceu com 33,3% de chance após 8 horas do início da doença.
+            // Após 16 horas ele terá 66,6% de chance de ser curado
+            // e após 24 horas ele estará curado
+            aleatorio 1 , 10
+            leia (ND)
+            aleatorio off
+
+            se (ND = 1) e (doente = 0)  entao
+               escreval ("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+               escreval ("   O Pet ",nome," esta DOENTE :(   ")
+               escreval ("       )                           ")
+               escreval ("      (_)                /\__      ")
+               escreval ("     .-'-.      .--.----'  - \     ")
+               escreval ("     |   |     /    )    \___/     ")
+               escreval ("     |   |    |  '------.___)      ")
+               escreval ("  ~~~`---'~~~  `---------`         ")
+               escreval ("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+               doente <- 1
+            fimse
+            se (doente = 1 ) entao
+               tdoente <- tdoente + 8
+            fimse
+            se (tdoente = 8) e (doente = 1) entao
+               escreval("Após 8 horas,o pet,", nome ," tem 33,3% de chance de se curar.")
+               aleatorio 1.0 , 100.0
+               leia (probab)
+               aleatorio off
+            fimse
+            se (probab <= 33.3) e (doente = 1) entao
+               escreval("Seu pet ",nome," se curou sozinho em 8 horas apos ficar doente")
+               doente <- 0
+            fimse
+            se (tdoente = 16) e (doente = 1) entao
+               escreval("Após 16 horas,o pet,", nome ," tem 66,6% de chance de se curar.")
+               aleatorio 1.0 , 100.0
+               leia (probab)
+               aleatorio off
+            fimse
+            se (probab <= 66.6) e (doente = 1) entao
+               escreval ("Seu pet ",nome," se curou sozinho em 16 horas apos ficar doente")
+               doente <- 0
+            fimse
+            se (tdoente = 24)e (doente = 1) entao
+               escreval ("Seu pet ",nome," se curou sozinho em 24 horas apos ficar doente")
+               doente <- 0
             fimse
          fimse
-         // Caso ele esteja doente, a cada 8 horas ele deverá ter chance de se curar
-         // sozinho. Isso aconteceu com 33,3% de chance após 8 horas do início da doença.
-         // Após 16 horas ele terá 66,6% de chance de ser curado
-         // e após 24 horas ele estará curado
-         aleatorio 1 , 10
-         leia (ND)
-         aleatorio off
-
-         se (ND = 1) e (doente = 0)  entao
-            escreval ("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-            escreval ("   O Pet ",nome," esta DOENTE :(   ")
-            escreval ("                  )                ")
-            escreval ("                 (_)               ")
-            escreval ("                .-'-.              ")
-            escreval ("                |   |              ")
-            escreval ("                |   |              ")
-            escreval ("             ~~~`---'~~~           ")
-            escreval ("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-            doente <- 1
-         fimse
-         se (doente = 1 ) entao
-            tdoente <- tdoente + 8
-         fimse
-         se (tdoente = 8) e (doente = 1) entao
-            escreval("Após 8 horas,o pet,", nome ," tem 33,3% de chance de se curar.")
-            aleatorio 1.0 , 100.0
-            leia (probab)
-            aleatorio off
-         fimse
-         se (probab <= 33.3) e (doente = 1) entao
-            escrevaL ("Seu pet ",nome," se curou sozinho em 8 horas apos ficar doente")
-            doente <- 0
-         fimse
-         se (tdoente = 16) e (doente = 1) entao
-            escreval("Após 16 horas,o pet,", nome ," tem 66,6% de chance de se curar.")
-            aleatorio 1.0 , 100.0
-            leia (probab)
-            aleatorio off
-         fimse
-         se (probab <= 66.6) e (doente = 1) entao
-            escrevaL ("Seu pet ",nome," se curou sozinho em 16 horas apos ficar doente")
-            doente <- 0
-         fimse
-         se (tdoente = 24)e (doente = 1) entao
-            escrevaL ("Seu pet ",nome," se curou sozinho em 24 horas apos ficar doente")
-            doente <- 0
-         fimse
-
 
       caso 2
          // Alimentar
-         escreval ("            /\__        ")
-         escreval ("   .--.----'  - \       ")
-         escreval ("  /    )    \___/       ")
-         escreval (" |  '------.___)        ")
-         escreval ("  `---------`           ")
-         escreva ( )
-         se (fome = 0 ) entao
-            felicidade <- felicidade - 2
+         se(felicidade < 3)  e (fome = 0) entao
+            repita
+               escreval ("Se ALIMENTAR o seu Pet vai MORRER de TRISTEZA!")
+               escreval("Deseja proceguir ?")
+               escreval("1.Sim")
+               escreval("2.Não")
+               leia(opcao)
+            ate(opcao = 1) ou (opcao = 2)
          fimse
-         fome <- fome - 4
-         se (fome < 0) entao
-            fome <- 0
-         senao
-            se (fome > 10) entao
-               fome <- 10
+         se (opcao <> 2) entao
+            escreval ("    ,    __         ")
+            escreval ("   ((___()'`;       ")
+            escreval ("   /      /`        ")
+            escreval ("   \ .--.(   ___    ")
+            escreval ("    \\   \\ /___\   ")
+            escreva ( )
+            se (fome = 0 ) entao
+               felicidade <- felicidade - 2
+            fimse
+            fome <- fome - 4
+            se (fome < 0) entao
+               fome <- 0
             senao
-               se (felicidade <= 0) entao
-                  felicidade <- 0
+               se (fome > 10) entao
+                  fome <- 10
                senao
-                  se (felicidade > 10) entao
-                     felicidade <- 10
+                  se (felicidade <= 0) entao
+                     felicidade <- 0
+                  senao
+                     se (felicidade > 10) entao
+                        felicidade <- 10
+                     fimse
                   fimse
                fimse
             fimse
          fimse
 
 
-
       caso 3
          //Jogar: Ao escolher a função jogar, o pet e o usuário farão uma
          // partida de pedra, papel e tesoura. Caso o pet vença, sua felicidade
          // aumenta em 5 pontos. Caso ele perca, sua felicidade aumentou em 3 pontos.
-         escreval ("=======================")
-         escreval ("PEDRA,PAPEL OU TESOURA")
-         escreval ("=======================")
-         escreval ("    __                                  ")
-         escreval ("   ()'`;        ____  ____  ____  ____  ")
-         escreval ("   /\|`        ||G ||||A ||||M ||||E || ")
-         escreval ("  /  |         ||__||||__||||__||||__|| ")
-         escreval ("(/_)_|_        |/__\||/__\||/__\||/__\| ")
+         limpatela
+         escreval (" ____  _____ ____  ____      _                         ")
+         escreval ("|  _ \| ____|  _ \|  _ \    / \         __             ")
+         escreval ("| |_) |  _| | | | | |_) |  / _ \       ()'`;           ")
+         escreval ("|  __/| |___| |_| |  _ <  / ___ \      /\|`            ")
+         escreval ("|_|__ |_____|____/|_|_\_\/_/   \_\    /  |             ")
+         escreval ("|  _ \ / \  |  _ \| ____| |         (/_)_|_            ")
+         escreval ("| |_) / _ \ | |_) |  _| | |                      ___   ")
+         escreval ("|  __/ ___ \|  __/| |___| |___                  /^ ^\  ")
+         escreval ("|_|_/_/___\_\_|__ |_____|_____|____      _     / 0 0 \ ")
+         escreval ("|_   _| ____/ ___| / _ \| | | |  _ \    / \    V\ Y /V ")
+         escreval ("  | | |  _| \___ \| | | | | | | |_) |  / _ \    / - \  ")
+         escreval ("  | | | |___ ___) | |_| | |_| |  _ <  / ___ \   |    \ ")
+         escreval ("  |_| |_____|____/ \___/ \___/|_| \_\/_/   \_\  || (__V")
          escreval ( )
          escrevaL ("Digite sua jogada: ")
          escreval ("-----------------------")
@@ -248,38 +275,48 @@ Inicio
 
       caso 4
          // Dar Banho
-         escreval ("       .-'-.     ")
-         escreval ("      /|6 6|\    ")
-         escreval ("     {/(_0_)\}   ")
-         escreval ("      _/ ^ \_    ")
-         escreval ("     (/_/^\_\)-' ")
-
-         se (limpeza = 10) entao
-            felicidade <- felicidade - 6
+         se(felicidade < 7) e (limpeza = 10) entao
+            repita
+               escreval ("Se dar BANHO o seu Pet vai MORRER de TRISTEZA!")
+               escreval("Deseja proceguir ?")
+               escreval("1.Sim")
+               escreval("2.Não")
+               leia(opcao)
+            ate(opcao = 1) ou (opcao = 2)
          fimse
+         se (opcao <> 2) entao
+            escreval ("       .-'-.     ")
+            escreval ("      /|6 6|\    ")
+            escreval ("     {/(_0_)\}   ")
+            escreval ("      _/ ^ \_    ")
+            escreval ("     (/_/^\_\)-' ")
 
-         para num de limpeza ate 9 passo 1 faca
-            cont <- cont + 1
-         fimpara
-         limpeza <- limpeza + cont
+            se (limpeza = 10) entao
+               felicidade <- felicidade - 6
+            fimse
+
+            para num de limpeza ate 9 passo 1 faca
+               cont <- cont + 1
+            fimpara
+            limpeza <- limpeza + cont
 
 
-         se (limpeza < 0) entao
-            limpeza <- 0
-         senao
-            se (limpeza > 10) entao
-               limpeza <- 10
+            se (limpeza < 0) entao
+               limpeza <- 0
             senao
-               se (felicidade <= 0) entao
-                  felicidade <- 0
+               se (limpeza > 10) entao
+                  limpeza <- 10
                senao
-                  se (felicidade > 10) entao
-                     felicidade <- 10
+                  se (felicidade <= 0) entao
+                     felicidade <- 0
+                  senao
+                     se (felicidade > 10) entao
+                        felicidade <- 10
+                     fimse
                   fimse
                fimse
             fimse
          fimse
-
 
 
       caso 5
@@ -308,10 +345,10 @@ Inicio
       fimescolha
 
 
-   ate (comando = 6) ou (vida = 168) ou (fome > 9) ou (limpeza = 0) ou (felicidade = 0)
+   ate (comando = 6) ou (vida = 168) ou (fome > 9) ou (limpeza = 0) ou (limpeza < 0) ou (felicidade = 0)  ou (felicidade < 0)
 
    se ((fome > 9) e (felicidade = 0)) entao
-   limpatela
+      limpatela
       escreval ("  ___   __   _  _  ____  ")
       escreval (" / __) / _\ ( \/ )(  __) ")
       escreval ("( (_ \/    \/ \/ \ ) _)  ")
@@ -327,7 +364,7 @@ Inicio
       escreval("==============================================")
    senao
       se (fome > 9) entao
-      limpatela
+         limpatela
          escreval ("  ___   __   _  _  ____  ")
          escreval (" / __) / _\ ( \/ )(  __) ")
          escreval ("( (_ \/    \/ \/ \ ) _)  ")
@@ -342,8 +379,8 @@ Inicio
          escreval("Idade em Horas: ",vida)
          escreval("==============================================")
       senao
-         se (felicidade = 0) entao
-         limpatela
+         se ((felicidade < 0) ou (felicidade = 0)) entao
+            limpatela
             escreval ("  ___   __   _  _  ____  ")
             escreval (" / __) / _\ ( \/ )(  __) ")
             escreval ("( (_ \/    \/ \/ \ ) _)  ")
@@ -358,8 +395,8 @@ Inicio
             escreval ("Idade em Horas: ",vida)
             escreval ("==============================================")
          senao
-            se (limpeza = 0) entao
-            limpatela
+            se (limpeza = 0) ou (limpeza < 0) entao
+               limpatela
                escreval ("  ___   __   _  _  ____  ")
                escreval (" / __) / _\ ( \/ )(  __) ")
                escreval ("( (_ \/    \/ \/ \ ) _)  ")
@@ -375,13 +412,18 @@ Inicio
                escreval ("==============================================")
             senao
                se (vida = 168 ) entao
-               limpatela
-                  escreval (" ______                      _                        ")
-                  escreval (" | ___ \                    | |                       ")
-                  escreval (" | |_/ /  __ _  _ __   __ _ | |__    ___  _ __   ___  ")
-                  escreval (" |  __/  / _` || '__| / _` || '_ \  / _ \| '_ \ / __| ")
-                  escreval (" | |    | (_| || |   | (_| || |_) ||  __/| | | |\__ \ ")
-                  escreval (" \_|     \__,_||_|    \__,_||_.__/  \___||_| |_||___/ ")
+                  limpatela
+                  escreval (" ______                      _                         |=|               ")
+                  escreval (" | ___ \                    | |                        | |               ")
+                  escreval (" | |_/ /  __ _  _ __   __ _ | |__    ___  _ __   ___  /   \              ")
+                  escreval (" |  __/  / _` || '__| / _` || '_ \  / _ \| '_ \ / __| |.--|              ")
+                  escreval (" | |    | (_| || |   | (_| || |_) ||  __/| | | |\__ \ ||  |              ")
+                  escreval (" \_|     \__,_||_|    \__,_||_.__/  \___||_| |_||___/ ||  |        . '.  ")
+                  escreval ("                                                      |'--|  .' . \~~~/  ")
+                  escreval ("                                                      '-=-'  \~~~/ \_/   ")
+                  escreval ("                                                              \_/   S    ")
+                  escreval ("                                                               S   _|_   ")
+                  escreval ("                                                              _|_        ")
                   escreval ( )
                   escreval ("====================================================")
                   escreval ("Parábens! Voce ganhou, ",nome," sobreviveu os 7 dias")
